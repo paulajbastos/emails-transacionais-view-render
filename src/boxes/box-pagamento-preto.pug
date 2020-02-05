@@ -1,0 +1,61 @@
+if templateType != "boletos"
+  if pagamentoType == "boleto"
+    - var pagamentoTypeName = "Boleto"
+    - var pagamentoButtonName = "ver boleto"
+    - var pagamentoBg = "background: url('https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-bg-tracos-branco.png') repeat-x #000000; background-position: 0 230px;"
+    - var pagamentoBgHeight = "height: 285px;"
+  else if pagamentoType == "debito"
+    - var pagamentoTypeName = "Débito"
+    - var pagamentoButtonName = "pagar"
+    - var pagamentoBg = "background: #000000;"
+    - var pagamentoBgHeight = "height: 205px;"
+else
+  - var pagamentoTypeName = "Boleto"
+  - var pagamentoButtonName = "ver boleto"
+  - var pagamentoBg = "background: url('https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-bg-tracos-branco.png') repeat-x #000000; background-position: 0 170px;"
+  - var pagamentoBgHeight = "height: 235px;"
+
+<table cellpadding="0" cellspacing="0" border="0" class="border-width height-box-pagamento-preto bg-pos-box-pagamento-preto" style="width: 100%; margin: 0; margin-bottom: 20px; padding: 0; border-radius: 10px; color: #FFF; #{pagamentoBgHeight} #{pagamentoBg}">
+
+  <tr>
+    <td valign="top"  style="clear: both;">
+      <div class="margin-reset width-auto" style="margin: 0 auto; width: 240px;">
+
+        <div class="margin-reset" style="float: left; width: 31px; margin-top: 40px;">
+          <img width="31px" height="22px" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-icon-pagamento-branco.png"  alt="ícone de pagamento" class="padd-50" style="padding:0 20px;"/>
+        </div>
+
+        <div class="margin-left-80" style="float: left; margin-left: 40px;  margin-top: 30px;">
+          <div>
+            <div class="font-12" style="text-transform: uppercase; margin-bottom: 10px; font-weight: 700; font-size: 14px;">Pagamento</div>
+            <div class="float-left"  style="float: none;">
+              <span class="font-12" style="display: inline-block; color: #FFFFFF; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px;">#{pagamentoTypeName}</span>
+              <span class="font-12" style="display: inline-block; margin-left: 10px; color: #FFFFFF; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700;">R$299,00</span>
+            </div>
+            if templateType != "boletos"
+              <div class="only-desk" style="display: none; clear: both; margin-top: 40px;  font-size: 12px;">Ah! Não se preocupe com essa parte<br> se já efetuou o pagamento.</div>
+          </div>
+        </div>
+
+        <div class="only-mobi" style="clear: both;"></div>
+
+        <div class="float-right margin-reset" style="float: none; clear: right; margin-top: 30px;">
+          if templateType != "boletos"
+            <div class="only-mobi" style="width: 240px; margin: 0 auto; font-size: 14px;">Ah! Não se preocupe com essa parte<br> se já efetuou o pagamento.</div>
+          <a href="#" title="Pagar" class="margin-top-40  margin-right-30" style="display: block; margin: 0 auto; margin-top: 20px; width: 150px; height: 40px; position: relative; border-radius: 10px; background: url('https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-seta-direita-branco.png') no-repeat #A60B19; background-position: 130px center;"  >
+            <span class="font-12 padd-top-14" style="color: #FFFFFF; text-transform: uppercase; text-align: center; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; display: block; padding-top: 12px; width: 100%; top: 14px;"><strong>#{pagamentoButtonName}</strong></span>
+          </a>
+        </div>
+      </div>
+
+    </td>
+  </tr>
+
+  if pagamentoType == "boleto"
+    <tr>
+      <td colspan="3" style="position: relative;">
+        <span class="font-12 width-100-porcent padd-reset" style="color: #FFFFFF; text-transform: none; text-align: center; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; display: block;position: absolute; bottom: 10px; width: 98%;">12345.12345 00000.00005 00000.00008 9 12300000012345</span>
+      </td>
+    </tr>
+
+</table>

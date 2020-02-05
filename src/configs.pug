@@ -1,0 +1,83 @@
+//- Tipos de Templates:
+//- templateType: entregaEmCasa, retireNaLoja, lojaDoBairro, multiplasEntregas, cancelamento, boletos
+
+
+//- Entrega em casa:
+//- templateType = entregaEmCasa
+//- Steps disponíveis: confirmado, autorizado, faturado, enviado, entregue
+
+//- Retire na loja:
+//- templateType = retireNaLoja e lojaDoBairro
+//- Steps disponíveis: confirmado, autorizado, faturado, enviado, naLoja, entregue
+
+//- Multiplas Entregas:
+//- templateType = multiplasEntregas
+//- Steps disponíveis: confirmado, autorizado, faturadoEntrega1, naLojaEntrega1, entregueEntrega1, faturadoEntrega2, enviadoEntrega2, naLojaEntrega2, entregueEntrega2
+
+//- Boletos:
+//- Steps disponíveis: falta1dia, hojevence, venceu
+
+//- Tipos de pagamentos:
+//- pagamentoType: boleto, debito, cartao
+
+//- variaveis do template (alterar conforme Tipo de entrega, step da entrega e tipo de pagamento)
+- var templateType = "entregaEmCasa"
+- var step = "confirmado"
+- var pagamentoType = "boleto"
+
+//- variaveis de apoio
+- var pedido = "1115423"
+- var dataCompra = "quarta, 08 jan 19"
+- var prevEntrega = "segunda, 12 jan 19"
+- var userName = "Rodrigo"
+
+if step == "confirmado"
+  - var headerText = "Olá, seu<br/>pedido foi<br/>confirmado."
+  - var stepName = "Confirmado"
+else if step == "autorizado"
+  - var headerText = "Oba! Seu<br/>pedido foi<br/>autorizado."
+  - var stepName = "Autorizado"
+else if step == "faturado"
+  - var stepName = "Faturado"
+  - var headerText = "Já faturamos<br/>o seu pedido.<br/>Fique ligado."
+else if step == "faturadoEntrega1"
+  - var stepName = "Faturado"
+  - var headerText = "Já faturamos a<br/>sua 1ª entrega.<br/>Fique ligado."
+else if step == "faturadoEntrega2"
+  - var stepName = "Faturado"
+  - var headerText = "Já faturamos a<br/>sua 2ª entrega.<br/>Fique ligado."
+else if step == "naLoja"
+  - var stepName = "Na loja"
+  - var headerText = "Vem.<br/>Pode buscar<br/>o seu pedido."
+else if step == "naLojaEntrega1"
+  - var stepName = "Na loja"
+  - var headerText = "Vem.<br/>Pode buscar a<br/>sua 1ª entrega."
+else if step == "entregue"
+  - var stepName = "Entregue"
+  - var headerText = "E ai?<br/>Tudo certo?<br/>Gostou?"
+else if step == "entregueEntrega1"
+  - var stepName = "Entregue"
+  - var headerText = "Ainda tem mais.<br/>Nos vemos<br/>em breve."
+else if step == "enviado"
+  - var stepName = "Enviado"
+  - var headerText = "Falta pouco.<br/>Seu pedido está<br/>quase chegando."
+else if step == "enviadoEntrega2"
+  - var stepName = "Enviado"
+  - var headerText = "Sua 2ª entrega<br/>está quase<br/>chegando."
+else if step == "naLojaEntrega2"
+  - var stepName = "Na loja"
+  - var headerText = "Vem.<br/>Pode buscar a<br/>sua 2ª entrega."
+else if step == "entregueEntrega2"
+  - var stepName = "Entregue"
+  - var headerText = "E ai?<br/>Tudo certo?<br/>Gostou?"
+
+if templateType == "boletos"
+  if step == "falta1dia"
+    - var headerText = "Falta 1 dia para<br/>o vencimento<br/>do seu boleto."
+  else if step == "hojevence"
+    - var headerText = "Hoje é o dia do<br/>vencimento do<br/>seu boleto."
+  else if step == "venceu"
+    - var headerText = "Seu boleto venceu<br/>mas você pode<br/>pagar até amanha."
+
+if templateType == "cancelamento"
+  - var headerText = "Seu pedido foi<br/>cancelado."

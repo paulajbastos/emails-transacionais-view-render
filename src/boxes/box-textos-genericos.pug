@@ -1,0 +1,25 @@
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" class="border-width" style="width: 100%; margin: 0; padding: 0; padding-top: 20px ; color: #000000;">
+
+  <tr>
+    <td valign="middle" style="color: #000000; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px;">
+      <div class="main-width-inner padd-reset" style="width: 270px; margin: 0 auto;">
+        <div style="font-weight: 600; font-size: 14px;">Olá, #{userName}!</div>
+
+        if step == "confirmado"
+          <div style="line-height: 18px; margin-top:15px;">Pode comemorar! O seu pedido #{pedido} foi realizado com sucesso! Estamos apenas verificando o seu pagamento. Pode ficar tranquilo, vou te deixar por dentro de tudo que estiver acontecendo por aqui.</div>
+        else if step == "autorizado"
+          <div style="line-height: 18px; margin-top:15px;">Seu pedido #{pedido} já está sendo embalado agora que seu pagamento foi aprovado.</div>
+        else if step == "faturado" || step == "faturadoEntrega1" || step == "faturadoEntrega2"
+          <div style="line-height: 18px; margin-top:15px;">Agora sim! Seu pedido #{pedido} será despachado em até 24h. O coração chega a acelerar.</div>
+        else if step == "enviado" || step == "enviadoEntrega2"
+          <div style="line-height: 18px; margin-top:15px;">Estamos acompanhando aqui pelo GPS: seu pedido está a caminho!</div>
+        else if step == "naLoja" || step == "naLojaEntrega1" || step == "naLojaEntrega2"
+          <div style="line-height: 18px; margin-top:15px;">Pode correr pro abraço! O seu pedido #{pedido} já está pronto pra ser retirado na loja que você escolheu.</div>
+        else if step == "entregue" || step == "entregueEntrega2"
+          <div style="line-height: 18px; margin-top:15px;">Conta tudo, como foi? Estamos morrendo de curiosidade. Tira foto e marca a gente nas mídias.</div>
+        else if step == "entregueEntrega1"
+          <div style="line-height: 18px; margin-top:15px;">Já está curtindo a primeira entrega? Estamos curiosos!<br>Só não se esqueça que tem mais uma a caminho, hein.</div>
+      </div>
+    </td>
+  </tr>
+</table>

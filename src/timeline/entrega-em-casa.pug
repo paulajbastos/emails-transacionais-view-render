@@ -1,0 +1,34 @@
+//- RENDER TIMELINE STEPS -->
+<tr>
+  <td colspan="2" align="center" style="height: 15px">
+    if step == "confirmado"
+      <img alt="Pedido Confirmado" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-confirmado.png" width="90%" height="15" />
+    else if step == "autorizado"
+      <img alt="Pedido Autorizado" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-autorizado.png" width="90%" height="15" />
+    else if step == "faturado"
+      <img alt="Pedido Faturado" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-faturado.png" width="90%" height="15" />
+    else if step == "enviado"
+      <img alt="Pedido Enviado" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-enviado.png" width="90%" height="15" />
+    else if step == "entregue"
+      <img alt="Pedido Entregue" src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-entregue.png" width="90%" height="15" />
+  </td>
+</tr>
+
+//- RENDER TIMELINE TOOLTIPS -->
+<tr>
+  <td colspan="2" style="font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; color: #FFF; text-align: center;">
+    <div class="only-mobi" style="text-align: center; width: 80%; margin: 10px auto; background: #000000; border-radius: 5px; padding: 10px;"><font size="4">#{stepName}</font></div>
+    <div class="only-desk" style="display: none; margin-left: 20px;">
+      if step == "confirmado"
+        include entrega-em-casa/tooltips/entrega-em-casa-tooltip-confirmado-desk
+      else if step == "autorizado"
+        include entrega-em-casa/tooltips/entrega-em-casa-tooltip-autorizado-desk
+      else if step == "faturado"
+        include entrega-em-casa/tooltips/entrega-em-casa-tooltip-faturado-desk
+      else if step == "enviado"
+        include entrega-em-casa/tooltips/entrega-em-casa-tooltip-enviado-desk
+      else if step == "entregue"
+        include entrega-em-casa/tooltips/entrega-em-casa-tooltip-entregue-desk
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,63 @@
+//- RENDER TIMELINE STEPS -->
+
+//- múltiplas entregas: saido do cd (demora mais) tem 6 etapas e é a segunda entrega
+<tr>
+  <td colspan="2" align="center" style="height: 15px">
+    if step == "confirmado"
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-confirmado.png" width="90%" height="15" />
+    else if step == "autorizado"
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-autorizado.png" width="90%" height="15" />
+    else if step == "faturadoEntrega1"
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-1-faturado
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-faturado.png" width="90%" height="15" />
+    else if step == "naLojaEntrega1"
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-enviado.png" width="90%" height="15" />
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-1-naloja
+    else if step == "entregueEntrega1"
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-1-entregue
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-5-steps-entregue.png" width="90%" height="15" />
+    else if step == "faturadoEntrega2"
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-2-faturado
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-6-steps-faturado.png" width="90%" height="15" />
+    else if step == "enviadoEntrega2"
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-2-enviado
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-6-steps-enviado.png" width="90%" height="15" />
+    else if step == "naLojaEntrega2"
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-6-steps-naloja.png" width="90%" height="15" />
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-2-naloja
+    else if step == "entregueEntrega2"
+      <img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-timeline-6-steps-entregue.png" width="90%" height="15" />
+      //- include multiplas-entregas/steps/multiplas-entregas-step-entrega-2-entregue
+  </td>
+</tr>
+
+//- RENDER TIMELINE TOOLTIPS -->
+
+<tr>
+  <td colspan="2" style="font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; color: #FFF; text-align: center;">
+    <div class="only-mobi" style="text-align: center; width: 80%; margin: 10px auto; background: #000000; border-radius: 5px; padding: 10px;"><font size="4">#{stepName}</font></div>
+    <div class="only-desk" style="display: none; margin-left: 20px;">
+      if step == "confirmado"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-confirmado-desk
+      else if step == "autorizado"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-autorizado-desk
+      else if step == "faturadoEntrega1"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-1-faturado-desk
+      else if step == "naLojaEntrega1"
+        - var stepName = "Na loja"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-1-naloja-desk
+      else if step == "entregueEntrega1"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-1-entregue-desk
+      else if step == "faturadoEntrega2"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-2-faturado-desk
+      else if step == "enviadoEntrega2"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-2-enviado-desk
+      else if step == "naLojaEntrega2"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-2-naloja-desk
+      else if step == "entregueEntrega2"
+        include multiplas-entregas/tooltips/multiplas-entregas-tooltip-entrega-2-entregue-desk
+    </div>
+  </td>
+</tr>
+
+

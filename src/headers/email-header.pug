@@ -1,0 +1,50 @@
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#ACA69A" class="border-width header" style="width: 100%; height: 370px; margin: 0; margin-bottom: 20px; padding: 0; border-radius: 10px; color: #FFF">
+
+  <tr>
+    <td align="left" valign="top" style="height: 30px; width: 50px; padding: 30px 0 30px 30px;"><img src="https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-logo-grupo.png" alt="Logomarca Grupo Reserva"/></td>
+
+    <td align="right" class="padd-right-30" valign="top" style="height: 30px; padding-right: 0;">
+      <table style="margin-top: 20px;">
+        <tr valign="middle" style="height: 25px;">
+          <td align="right" class="align-right" style="text-align: left; color: #FFF; text-transform: uppercase; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; min-width: 80px;">NÚMERO DO PEDIDO</td>
+          <td class="padd-right-reset" style="padding-left: 10px; padding-right: 10px; color: #FFF; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 18px; margin:0; min-width: 125px;"><strong>#{pedido}</strong></td>
+        </tr>
+        <tr valign="middle" style="height: 25px;">
+          <td align="right" class="align-right" style="text-align: left; color: #FFF; text-transform: uppercase; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; min-width: 80px;">DATA DA COMPRA</td>
+          <td class="padd-right-reset" style="padding-left: 10px; padding-right: 10px; color: #FFF; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; margin:0;  min-width: 125px;"><strong>#{dataCompra}</strong></td>
+        </tr>
+        <tr valign="middle" style="height: 25px;">
+          <td align="right" class="align-right" style="text-align: left; color: #FFF; text-transform: uppercase; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px; margin-top: 10px; min-width: 80px;">Previsão da entrega</td>
+          <td class="padd-right-reset" style="padding-left: 10px; padding-right: 10px; color: #FFF; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; margin:0;  min-width: 125px;"><strong>#{prevEntrega}</strong></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="background: url('https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-bg-tracos-branco.png') repeat-x #ACA69A; text-align:left; width: 100%; height: 1px;"></td>
+  </tr>
+
+  <tr>
+    <td valign="top" colspan="2" class="header-top-text" style="text-align:left; width: 100%; height: 100px; overflow: hidden;">
+      <div class="header-top-text-item" style="width: 100%; line-height: 24px; margin:0; padding:20px; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 24px;"><strong>!{headerText}</strong></div>
+    </td>
+  </tr>
+
+  //- RENDER TIMELINE AND BULLETS -->
+  if templateType == "retireNaLoja"
+    include ../timeline/retire-na-loja
+  else if templateType == "entregaEmCasa" || templateType == "lojaDoBairro"
+    include ../timeline/entrega-em-casa
+  else if templateType == "multiplasEntregas"
+    include ../timeline/multiplas-entregas
+
+
+  //- TEXT MINHA CONTA -->
+  <tr>
+    <td colspan="2" valign="bottom" style="height: 70px">
+      <div class="header-info-bottom" style="display: block; margin:0; padding-top: 10px; padding-bottom: 20px; text-align: center; text-transform: none; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px;"> Acompanhe seu pedido sempre que precisar pelo <a href="https://www.usereserva.com/profile" class="inline" style="display: block; color: #FFFF; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 12px;"><strong>minha conta</strong> <span style="background: url('https://www.usereserva.com/ccstore/v1/images/?source=/file/general/email-transacional-v2-seta-esquerda-branco.png') no-repeat right 11px; padding: 6px;"></span></a></div>
+    </td>
+  </tr>
+
+</table>

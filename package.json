@@ -1,0 +1,20 @@
+{
+  "name": "emails-transacionais-view-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Paula Junqueira Bastos <paulajbastos@gmail.com> (http://www.paulajbastos.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "browser-sync": "^2.23.6",
+    "del": "^5.1.0",
+    "gulp": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "pug": "^2.0.4"
+  },
+  "dependencies": {}
+}
